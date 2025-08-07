@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://aminh.digifact.vn:5000/api';
+const API_BASE_URL = 'https://aminh.digifact.vn/api';
 
 let currentFormData = null;
 let survey = null;
@@ -146,3 +146,4 @@ function showSuccess() {
     document.getElementById('success').style.display = 'block';
     document.getElementById('formContainer').style.display = 'none';
 }
+
