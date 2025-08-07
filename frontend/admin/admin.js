@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://aminh.digifact.vn:5000/api';
+const API_BASE_URL = 'https://aminh.digifact.vn/api';
 
 let currentForm = null;
 let surveyCreator = null;
@@ -661,3 +661,4 @@ function changePassword() {
         showAlert('Lỗi: ' + error.message, 'danger');
     });
 }
+
