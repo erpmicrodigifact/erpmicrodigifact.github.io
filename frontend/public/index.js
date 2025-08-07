@@ -1,5 +1,5 @@
 // API URL
-const API_URL = 'http://aminh.digifact.vn:5000/api';
+const API_URL = 'https://aminh.digifact.vn/api';
 
 // Load danh sách forms khi trang load
 document.addEventListener('DOMContentLoaded', function() {
@@ -119,3 +119,4 @@ function showLoading() {
     document.getElementById('forms-container').style.display = 'none';
     document.getElementById('no-forms').style.display = 'none';
 }
+
