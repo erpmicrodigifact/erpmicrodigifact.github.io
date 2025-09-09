@@ -73,6 +73,9 @@ creator.saveSurveyFunc = (saveNo, callback) => {
 
 document.addEventListener("DOMContentLoaded", function() {
     creator.render(document.getElementById("surveyCreator"));
+    
+    // The banner remover will handle license banner removal automatically
+    // via the banner-remover.js script
 });
 
 // function saveSurveyJson(url, json, saveNo, callback) {

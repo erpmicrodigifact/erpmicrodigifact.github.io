@@ -1,0 +1,25 @@
+/* CSS to hide Survey Creator license banner */
+.svc-creator__banner {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+}
+
+.svc-creator__non-commercial-text {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide any banner that might have the licensing text */
+div[class*="banner"]:has(.svc-creator__non-commercial-text),
+div[class*="banner"]:has(a[href*="surveyjs.io/licensing"]) {
+    display: none !important;
+}
+
+/* Additional safety for any elements containing licensing text */
+*:has(a[href*="surveyjs.io/licensing"]) {
+    display: none !important;
+}

@@ -155,6 +155,9 @@ function initSurveyCreator() {
     };
     
     surveyCreator = new SurveyCreator.SurveyCreator(creatorOptions);
+    
+    // The banner remover will handle license banner removal automatically
+    // via the banner-remover.js script
 }
 
 // Load danh sách forms
