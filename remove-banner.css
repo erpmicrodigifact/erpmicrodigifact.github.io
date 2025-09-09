@@ -23,3 +23,82 @@ div[class*="banner"]:has(a[href*="surveyjs.io/licensing"]) {
 *:has(a[href*="surveyjs.io/licensing"]) {
     display: none !important;
 }
+
+/* Make Survey Creator container take remaining space within parent */
+.svc-full-container.svc-creator__area.svc-flex-column.svc-creator__area--with-banner {
+    height: calc(100vh - 120px) !important; /* Adjust for header space */
+    min-height: calc(100vh - 120px) !important;
+    width: 100% !important; /* Take parent width, not viewport width */
+    position: relative !important; /* Relative to parent, not fixed */
+    overflow: auto !important;
+}
+
+/* Alternative selector for container without banner class */
+.svc-full-container.svc-creator__area.svc-flex-column {
+    height: calc(100vh - 120px) !important;
+    min-height: calc(100vh - 120px) !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: auto !important;
+}
+
+/* For standalone page only - can take full screen */
+body:not(.admin-page) .svc-full-container.svc-creator__area.svc-flex-column.svc-creator__area--with-banner,
+body:not(.admin-page) .svc-full-container.svc-creator__area.svc-flex-column {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 1000 !important;
+}
+
+/* Ensure body and html don't have margin/padding that interfere but allow scrolling */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Make sure the Survey Creator container's parent takes available space */
+#surveyCreator {
+    height: calc(100vh - 100px) !important; /* Height minus header/padding */
+    width: 100% !important; /* Parent width, not viewport */
+    position: relative !important;
+}
+
+/* For standalone page */
+body:not(.admin-page) #surveyCreator {
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+/* Ensure flexbox children expand properly */
+.svc-creator__area .svc-creator__content-wrapper {
+    flex: 1 !important;
+    height: 100% !important;
+}
+
+/* Make sure tabs and panels take available space */
+.svc-tab-panel {
+    height: 100% !important;
+    flex: 1 !important;
+}
+
+/* Designer area should take full available space */
+.svc-tab-designer {
+    height: 100% !important;
+    flex: 1 !important;
+}
+
+.svc-tab-designer .svc-designer-tab {
+    height: 100% !important;
+}

@@ -15,6 +15,9 @@
     <!-- CSS to hide license banner -->
     <link rel="stylesheet" type="text/css" href="../../remove-banner.css">
     
+    <!-- Full screen layout CSS -->
+    <link rel="stylesheet" type="text/css" href="../../fullscreen-layout.css">
+    
     <!-- Banner remover script -->
     <script type="text/javascript" src="../../banner-remover.js"></script>
     
@@ -49,7 +52,8 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         #surveyCreator {
-            height: 80vh;
+            height: calc(100vh - 140px);
+            width: 100%;
         }
         .user-info {
             border-left: 4px solid #667eea;
@@ -60,8 +64,8 @@
         }
     </style>
 </head>
-<body>
-    <div class="container-fluid">
+<body class="admin-page">
+    <div class="container-fluid">`
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 sidebar">

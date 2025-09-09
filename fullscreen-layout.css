@@ -1,0 +1,162 @@
+/* Full Screen Layout for Survey Creator - Respecting Sidebar Layout */
+
+/* Reset global styles for full screen experience */
+* {
+    box-sizing: border-box !important;
+}
+
+/* Don't override html/body completely - respect Bootstrap layout */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Main Survey Creator container - adapt to parent container */
+#surveyCreator {
+    height: calc(100vh - 40px) !important; /* Full height minus some padding */
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* Survey Creator main area containers - fit within parent */
+.svc-full-container.svc-creator__area.svc-flex-column.svc-creator__area--with-banner,
+.svc-full-container.svc-creator__area.svc-flex-column,
+.svc-creator__area {
+    height: calc(100vh - 60px) !important; /* Full viewport height minus header space */
+    min-height: calc(100vh - 60px) !important;
+    max-height: calc(100vh - 60px) !important;
+    width: 100% !important;
+    position: relative !important; /* Changed from fixed to relative */
+    overflow: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* For admin page - respect the col-md-9 container */
+.col-md-9 .svc-creator__area {
+    height: calc(100vh - 120px) !important; /* Extra space for form editor header */
+    min-height: calc(100vh - 120px) !important;
+    max-height: calc(100vh - 120px) !important;
+}
+
+/* Content wrapper should take full available space */
+.svc-creator__content-wrapper {
+    flex: 1 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Tab panels should expand to fill space */
+.svc-tab-panel {
+    height: 100% !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Designer tab specific styles */
+.svc-tab-designer {
+    height: 100% !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.svc-tab-designer .svc-designer-tab {
+    height: 100% !important;
+    flex: 1 !important;
+    overflow: auto !important;
+}
+
+/* Toolbox and property grid containers */
+.svc-flex-row {
+    height: 100% !important;
+    flex: 1 !important;
+}
+
+.svc-toolbox {
+    height: 100% !important;
+    overflow: auto !important;
+}
+
+.svc-property-grid {
+    height: 100% !important;
+    overflow: auto !important;
+}
+
+/* Survey designer surface */
+.svc-tab-designer__content {
+    height: 100% !important;
+    flex: 1 !important;
+    overflow: auto !important;
+}
+
+/* Ensure tabs header doesn't break layout */
+.svc-creator__header,
+.svc-tabs {
+    flex-shrink: 0 !important;
+}
+
+/* For standalone page (index.html) - can take full screen */
+body:not(.admin-page) #surveyCreator {
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 999 !important;
+}
+
+body:not(.admin-page) .svc-creator__area {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 1000 !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .svc-creator__area {
+        font-size: 14px !important;
+    }
+    
+    .svc-toolbox,
+    .svc-property-grid {
+        min-width: 200px !important;
+    }
+    
+    /* On mobile, make it full screen */
+    .col-md-9 .svc-creator__area {
+        height: 100vh !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 1050 !important;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .svc-creator__area {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+}
